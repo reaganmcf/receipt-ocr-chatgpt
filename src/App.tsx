@@ -13,7 +13,7 @@ export default function App() {
 
     // Set the receipt image
     const file = event.target.files[0];
-    setReceiptImage(URL.createObjectURL(file));
+    setReceiptImage(URL.createObjectURL(file) as any);
   };
 
   const parseItemizedList = (text) => {
@@ -63,7 +63,7 @@ export default function App() {
           <div>
             <h2 className="text-2xl font-bold mb-2">Itemized List</h2>
             <ul className="bg-white rounded-lg shadow-md divide-y divide-gray-200">
-              {itemizedList.map((item) => (
+              {itemizedList.map((item: any) => (
                 <li key={item.name} className="px-4 py-3">
                   <div className="flex justify-between items-center">
                     <div className="font-medium">{item.name}</div>
